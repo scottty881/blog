@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "new:note": "node scripts/new.mjs note",
+    "new:post": "node scripts/new.mjs post"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.6",
