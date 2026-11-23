@@ -1,0 +1,48 @@
+---
+import Layout from "../../components/Layout.astro";
+import Article from "../../components/Article.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("notes");
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: note,
+  }));
+}
+
+const note = Astro.props;
+const { Content } = await render(note);
+
+const noteUrl = new URL(`${import.meta.env.BASE_URL}notes/${note.id}`, Astro.site).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": note.data.title,
+  "description": note.data.description,
+  "datePublished": note.data.date.toISOString(),
+  "url": noteUrl,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": noteUrl,
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Scott Tsuchiyama",
+    "url": "https://scottty881.github.io/blog",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Scott Tsuchiyama",
+    "url": "https://scottty881.github.io/blog",
+  },
+};
+---
+
+<Layout title={`${note.data.title} — Blog`} description={note.data.description} ogType="article">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <Article title={note.data.title} date={note.data.date} description={note.data.description}>
+    <Content />
+  </Article>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from "../../components/Layout.astro";
+import Heading from "../../components/Heading.astro";
+import EntryList from "../../components/EntryList.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("posts");
+---
+
+<Layout title="Posts — Blog">
+  <section>
+    <header class="index-header">
+      <Heading as="h1">Posts</Heading>
+    </header>
+    <EntryList entries={entries} />
+  </section>
+</Layout>
+
+<style>
+  .index-header {
+    margin-bottom: var(--space-2xl);
+  }
+</style>
