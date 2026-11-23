@@ -6,20 +6,20 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Blog",
+  "url": Astro.site?.href,
+};
 ---
 
 <Layout title="Blog">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Blog",
-    "description": "Writing about systems, design, and building with restraint.",
-    "url": Astro.site?.href,
-  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="home">
     <header class="home-header">
       <Heading as="h1">Blog</Heading>
-      <p class="home-tagline">Writing about systems, design, and building with restraint.</p>
     </header>
     <ul class="post-list">
       {
@@ -47,13 +47,6 @@ const posts = (await getCollection("posts")).sort(
 <style>
   .home-header {
     margin-bottom: var(--space-2xl);
-  }
-
-  .home-tagline {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    margin-top: var(--space-sm);
   }
 
   .post-list {
