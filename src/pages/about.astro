@@ -1,0 +1,61 @@
+---
+import Layout from "../components/Layout.astro";
+import Heading from "../components/Heading.astro";
+import Prose from "../components/Prose.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="About — Blog"
+  description="Scott Tsuchiyama is a software engineer in Seattle writing about AI experiments."
+>
+  <article class="about">
+    <header class="about-header">
+      <Heading as="h1">About</Heading>
+    </header>
+    <Prose>
+      <p>
+        Hey, I'm Scott, a software engineer in Seattle and an avid AI tinkerer.
+      </p>
+      <p>
+        I write here to share my thoughts and experiments with AI. Partly to
+        add one more voice to the pile that powers the bots, and maybe to
+        inspire a human or two along the way.
+      </p>
+      <p>
+        I've spent my career at startups of every shape, size and sector. Along
+        the way I've covered just about every role in an engineering org, from
+        the top all the way down.
+      </p>
+
+      <h2>What's here</h2>
+      <p>
+        <a href={`${base}notes`}>Notes</a> are short: ideas, half-finished
+        experiments, things I'm in the middle of figuring out.
+        <a href={`${base}posts`}>Posts</a> are longer and more considered.
+      </p>
+
+      <h2>Useful Machinery</h2>
+      <p>
+        I also work on Useful Machinery, so some experiments here use it where
+        it's the right tool. When they do, I'll say so.
+      </p>
+
+      <h2>Elsewhere</h2>
+      <p>
+        <a href="https://github.com/scottty881">GitHub</a>
+      </p>
+    </Prose>
+  </article>
+</Layout>
+
+<style>
+  .about {
+    max-width: var(--width-content);
+  }
+
+  .about-header {
+    margin-bottom: var(--space-xl);
+  }
+</style>
