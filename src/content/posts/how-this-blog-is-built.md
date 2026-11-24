@@ -1,51 +1,33 @@
 ---
 title: "How this blog is built"
-description: "Astro, GitHub Pages, the AT Protocol and an AI agent doing most of the typing."
+description: "Every choice here was made to remove one more excuse not to write."
 date: 2026-11-24
 ---
 
-This blog is also my first experiment on it. I built nearly all of it by talking to an AI coding agent (Claude Code) in my terminal: describing what I wanted, reviewing pull requests and merging them.
+I've started blogs before. The setup was never the hard part; writing was. So this time every decision had one goal: make it easier to actually write things.
 
-## The stack
+I built it by talking to an AI coding agent in my terminal. That's its own experiment, but this post is about the choices, not the code.
 
-- **[Astro](https://astro.build)** generates a static site from Markdown.
-- **GitHub Pages** hosts it. Every push to `main` builds and deploys in about a minute.
-- **Cloudflare** handles DNS for `1tsu.net`.
-- **Nix** pins the dev environment, so the Node version on my machine matches CI.
+## Two streams, so nothing has to be finished
 
-## Notes and posts
+Most of what I'd want to share isn't a polished essay. It's a quick finding, half an idea, something I tried last week. So there are **notes** for those, and **posts** for the longer pieces. A note doesn't need a description, a hook or a conclusion. It just needs to exist.
 
-There are two streams. Notes are short: ideas, half-finished experiments. Posts are longer and more considered, like this one. Both show up in one feed on the homepage.
+## Starting has to take seconds
 
-Starting one is a single command:
+A new note is one command. It creates the file with the date and title already filled in, so I'm looking at an empty page instead of setup. No CMS to log into, no editor to learn. It's Markdown in the same terminal I already work in.
 
-```sh
-npm run new:note "Title"
-npm run new:post "Title"
-```
+## Publishing is just merging
 
-That creates the file with today's date and the frontmatter filled in, so the only thing left is writing.
+There's no separate publish step. When something's done, I merge it and it's live a minute later. If it's not done, it sits on a branch and nobody sees it.
 
-## Publishing to the AT Protocol
+## Readers should find it without me promoting it
 
-Every entry is also published as a [Standard.site](https://standard.site) record on my Bluesky account. Standard.site is a shared format for long-form writing on the AT Protocol, so readers and search tools in that ecosystem can find posts without knowing this site exists.
+I don't want "now go market it" to be the last step of every post. So entries are also published to the AT Protocol, the open network Bluesky runs on, where readers and search tools can discover them on their own. Auto-posting to Bluesky is next.
 
-Two things prove the records are mine. The site serves `/.well-known/site.standard.publication`, which points at the blog's record, and each page has a `<link>` tag pointing at its own record. A script runs after every deploy and creates, updates or deletes records to match the site.
+## Nothing to babysit
 
-My favorite detail: record IDs have to be timestamp-based IDs (TIDs), so the agent derives each one from the entry's date and filename. The build and the sync script compute the same ID independently, with no database and no state file.
+No comments to moderate, no cookie banner, no plugins to update. The analytics just count page views, without cookies, and I'll try not to check them too often.
 
-## Analytics without cookies
+## The real test
 
-Cloudflare Web Analytics counts page views with one script tag. No cookies, no tracking across sites, no consent banner.
-
-## Building it with an agent
-
-The agent did the typing: an Astro 5 to 7 upgrade, the notes stream, the custom domain, the AT Protocol sync. I made the decisions, reviewed every PR and held the merge button. It wasn't allowed to merge on its own unless I said so, and a couple of times it got stopped for trying.
-
-It wasn't flawless. The Astro upgrade quietly broke every post link: Astro 7 dropped a trailing slash from the base path, so links pointed at `/blogposts/...` and returned 404s. The build passed because it only checked that pages were generated, not where their links pointed. The agent caught it while building the next feature, owned the mistake and shipped a one-line fix.
-
-That's the real lesson so far: an agent makes it cheap to build things, and checking the output is still my job.
-
-## What's next
-
-Auto-posting new entries to Bluesky, and showing Bluesky replies as comments here.
+None of this matters if I don't write. This post is the first proof; the next ones are the real test.
