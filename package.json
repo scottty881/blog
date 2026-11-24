@@ -8,11 +8,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "new:note": "node scripts/new.mjs note",
-    "new:post": "node scripts/new.mjs post"
+    "new:post": "node scripts/new.mjs post",
+    "atproto:sync": "node scripts/atproto-sync.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.6",
     "@astrojs/rss": "^4.0.19",
     "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "yaml": "^2.9.1"
   }
 }
