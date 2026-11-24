@@ -65,6 +65,17 @@ Every push to `main` builds the site and deploys it to GitHub Pages (`.github/wo
 
 The usual flow is a branch and a pull request, then merge to publish.
 
+## Standard.site (AT Protocol)
+
+Every note and post is also published as a [Standard.site](https://standard.site) record on [@scottty.bsky.social](https://bsky.app/profile/scottty.bsky.social), so AT Protocol readers and indexes can find it.
+
+- `src/lib/atproto.mjs` holds the DID, publication name and description, and derives a stable record key for each entry from its collection, filename and date.
+- `https://1tsu.net/.well-known/site.standard.publication` returns the publication URI, and each entry page has a `<link rel="site.standard.document">` tag. Together these verify the records.
+- After each deploy, CI runs `npm run atproto:sync`, which creates or updates changed records and deletes records for removed entries. It needs the `BSKY_APP_PASSWORD` repo secret (a Bluesky app password).
+- `npm run atproto:sync -- --dry-run` prints the records without publishing.
+
+Renaming a file or changing its `date` gives the entry a new record key: the old record is deleted and a new one is created.
+
 ## How it's built
 
 - [Astro](https://astro.build) 7, static output, with MDX.

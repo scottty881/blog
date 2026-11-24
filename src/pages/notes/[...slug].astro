@@ -2,6 +2,7 @@
 import Layout from "../../components/Layout.astro";
 import Article from "../../components/Article.astro";
 import { getCollection, render } from "astro:content";
+import { documentUri } from "../../lib/atproto.mjs";
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes");
@@ -42,6 +43,7 @@ const jsonLd = {
 
 <Layout title={`${note.data.title} — Blog`} description={note.data.description} ogType="article">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <link slot="head" rel="site.standard.document" href={documentUri("notes", note.id, note.data.date)} />
   <Article title={note.data.title} date={note.data.date} description={note.data.description}>
     <Content />
   </Article>
