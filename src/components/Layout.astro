@@ -48,6 +48,14 @@ const googleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
     <!-- JSON-LD -->
     <slot name="head" />
 
+    <!-- Cloudflare Web Analytics: cookieless page view counts -->
+    <script
+      is:inline
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "c0247cc6896a415282a469ec21904c63"}'
+    ></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
