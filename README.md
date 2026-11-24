@@ -2,7 +2,7 @@
 
 Scott Tsuchiyama's personal blog: thoughts and experiments with AI, from a software engineer in Seattle.
 
-Live at **https://scottty881.github.io/blog/**
+Live at **https://1tsu.net**
 
 ## Content
 
@@ -10,10 +10,10 @@ There are two streams, and the homepage shows both in one feed sorted by date.
 
 | Stream | What it's for | Folder | URL |
 | :-- | :-- | :-- | :-- |
-| **Notes** | Short ideas, quick experiments, things in progress | `src/content/notes/` | `/blog/notes/<slug>` |
-| **Posts** | Longer, more considered writing | `src/content/posts/` | `/blog/posts/<slug>` |
+| **Notes** | Short ideas, quick experiments, things in progress | `src/content/notes/` | `/notes/<slug>` |
+| **Posts** | Longer, more considered writing | `src/content/posts/` | `/posts/<slug>` |
 
-Each stream also has an index page (`/blog/notes`, `/blog/posts`), and there's an About page at `/blog/about` (`src/pages/about.astro`).
+Each stream also has an index page (`/notes`, `/posts`), and there's an About page at `/about` (`src/pages/about.astro`).
 
 ## Writing a new note or post
 
@@ -48,7 +48,7 @@ Astro 7 needs Node 24 (`>= 22.23.4`). The system Node may be older, so use the p
 ```sh
 devenv shell                         # or: nix shell nixpkgs#nodejs_24
 npm install
-npm run dev                          # http://localhost:4321/blog/
+npm run dev                          # http://localhost:4321/
 ```
 
 | Command | Action |
@@ -69,7 +69,7 @@ The usual flow is a branch and a pull request, then merge to publish.
 
 - [Astro](https://astro.build) 7, static output, with MDX.
 - Content collections are defined in `src/content.config.ts`.
-- The site is served under `/blog/` (`base` in `astro.config.mjs`). Build links with `import.meta.env.BASE_URL`, which includes the trailing slash.
+- The site is served under `/` (`base` in `astro.config.mjs`). Build links with `import.meta.env.BASE_URL`, which includes the trailing slash.
 
 ```text
 src/
