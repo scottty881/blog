@@ -1,7 +1,7 @@
 ---
 title: "How this blog is built"
 description: "How can we make this as frictionless as possible to post"
-date: 2026-11-24
+date: 2026-11-25
 ---
 
 I've thought of starting a blog before but never gotten very far. The overhead of posting and the need for polish has always been a blocker. Now that I'm out here posting for the bots and competing with AI slop, I am hoping the polish bar feels lower. I've also done a few things listed below to try and get to more regular posting. Note: I will not post AI generated words.
