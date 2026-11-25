@@ -1,33 +1,23 @@
 ---
 title: "How this blog is built"
-description: "Every choice here was made to remove one more excuse not to write."
+description: "How can we make this as frictionless as possible to post"
 date: 2026-11-24
 ---
 
-I've started blogs before. The setup was never the hard part; writing was. So this time every decision had one goal: make it easier to actually write things.
-
-I built it by talking to an AI coding agent in my terminal. That's its own experiment, but this post is about the choices, not the code.
+I've thought of starting a blog before but never gotten very far. The overhead of posting and the need for polish has always been a blocker. Now that I'm out here posting for the bots and competing with AI slop, I am hoping the polish bar feels lower - but I will not post AI generated words. I've also done a few things listed below to try and get to more regular posting.
 
 ## Two streams, so nothing has to be finished
 
-Most of what I'd want to share isn't a polished essay. It's a quick finding, half an idea, something I tried last week. So there are **notes** for those, and **posts** for the longer pieces. A note doesn't need a description, a hook or a conclusion. It just needs to exist.
+I'll never post if everything has to be finished post quality. So I added a second stream of **notes**. Notes are quick findings, ideas to share or random thoughts. Once in a while, the goal is to get a post to something of a higher quality, and those will show up as **posts**.
 
-## Starting has to take seconds
+## Starting has to be fast
 
-A new note is one command. It creates the file with the date and title already filled in, so I'm looking at an empty page instead of setup. No CMS to log into, no editor to learn. It's Markdown in the same terminal I already work in.
+My Claude sessions have been asked to write a starter post for me when I get to the end of a segment of work. I won't post what Claude put together, but having it start the file, add in relevant content and remind me to post hopefully helps me post.
 
-## Publishing is just merging
+## I'll be impressed if I ever promote this
 
-There's no separate publish step. When something's done, I merge it and it's live a minute later. If it's not done, it sits on a branch and nobody sees it.
-
-## Readers should find it without me promoting it
-
-I don't want "now go market it" to be the last step of every post. So entries are also published to the AT Protocol, the open network Bluesky runs on, where readers and search tools can discover them on their own. Auto-posting to Bluesky is next.
-
-## Nothing to babysit
-
-No comments to moderate, no cookie banner, no plugins to update. The analytics just count page views, without cookies, and I'll try not to check them too often.
+Who has the time? So entries are auto published to the AT Protocol, the open network Bluesky runs on. Maybe someone will find the content there.
 
 ## The real test
 
-None of this matters if I don't write. This post is the first proof; the next ones are the real test.
+Is it going to work? We'll see!
