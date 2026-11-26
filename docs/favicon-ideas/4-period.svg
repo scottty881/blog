@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>.tile{fill:#1a1a1a}.mark{fill:#fafaf9}@media (prefers-color-scheme:dark){.tile{fill:#fafaf9}.mark{fill:#1a1a1a}}</style>
+  <rect class="tile" width="32" height="32" rx="7"/>
+  <circle class="mark" cx="16" cy="16" r="5"/>
+</svg>
