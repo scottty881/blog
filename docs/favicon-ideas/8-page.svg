@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>.tile{fill:#1a1a1a}.mark{fill:#fafaf9}.cut{fill:#1a1a1a}.fold{fill:#a8a8a3}@media (prefers-color-scheme:dark){.tile{fill:#fafaf9}.mark{fill:#1a1a1a}.cut{fill:#fafaf9}.fold{fill:#6b6b67}}</style>
+  <rect class="tile" width="32" height="32" rx="7"/>
+  <path class="mark" d="M9 6h10l5 5v15H9z"/>
+  <path class="fold" d="M19 6v5h5z"/>
+  <rect class="cut" x="12" y="15" width="9" height="2" rx="1"/>
+  <rect class="cut" x="12" y="20" width="6" height="2" rx="1"/>
+</svg>

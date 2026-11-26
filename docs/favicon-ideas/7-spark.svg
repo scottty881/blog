@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>.tile{fill:#1a1a1a}.mark{fill:#fafaf9}.cut{fill:#1a1a1a}.fold{fill:#a8a8a3}@media (prefers-color-scheme:dark){.tile{fill:#fafaf9}.mark{fill:#1a1a1a}.cut{fill:#fafaf9}.fold{fill:#6b6b67}}</style>
+  <rect class="tile" width="32" height="32" rx="7"/>
+  <path class="mark" d="M16 5c1 7.5 3.5 10 11 11-7.5 1-10 3.5-11 11-1-7.5-3.5-10-11-11 7.5-1 10-3.5 11-11z"/>
+</svg>
